@@ -10,14 +10,13 @@ class ProcessingException(Exception):
         self.info = info
 
 
-def f(a, b):
-    if b == 0:
-        raise InvalidDataException('На ноль делить нельзя >:(', {'a': a, 'b': b})
-    return a / b
+def f(person_name):
+    if type(person_name) == int:
+        raise InvalidDataException('числа вводить нельзя >:(', person_name)
 
 
 try:
-    f(123, 0)
+    f(123)
 except InvalidDataException as e:
     print('Ай-я-я-яй, как не хорошо')
     print(f'Сообщение об ошибке: {e.message}')
@@ -33,7 +32,6 @@ class Car:
 def trip(speed, maximum_speed):
     if speed == maximum_speed:
         raise ProcessingException('Сейчас будет перегрев двигателя, тормозите', speed)
-
 
 
 try:
