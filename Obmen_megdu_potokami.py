@@ -41,7 +41,7 @@ class Cafe:
                 customer.start()
                 self.customer_number += 1
             else:
-                print(f"Посетитель номер {self.customer_number} ожидает свободный стол.")  # помещение в очередь
+                print(f"Посетитель номер {self.customer_number} ожидает свободный стол.") 
                 self.customer_number += 1
 
 
